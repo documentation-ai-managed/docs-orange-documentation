@@ -1,0 +1,108 @@
+---
+title: Introduction to Orange Documentation
+description: Discover Orange Documentation, your default space for organizing and manage all project documentation efficiently.
+---
+
+## Overview
+
+Orange Documentation provides a centralized hub where you create, organize, and publish project documentation. You streamline workflows by combining markdown editing, version control, and search capabilities into one intuitive platform. Designed for developers, product managers, and teams, it supports collaborative editing and custom branding.
+
+<Callout kind="info">
+Orange Documentation uses your brand color `#3B82F6` for consistent theming across all pages.
+</Callout>
+
+## Key Features
+
+Explore the core capabilities that make Orange Documentation powerful for your projects.
+
+<Columns cols={3}>
+  <Card title="Markdown Editor" icon="edit-3" href="/docs/editor">
+    Write documentation with live preview, syntax highlighting, and auto-save.
+  </Card>
+  <Card title="Version History" icon="git-branch" href="/docs/versions">
+    Track changes, revert edits, and collaborate with git-like branching.
+  </Card>
+  <Card title="Search & Navigation" icon="search" href="/docs/search">
+    Full-text search and dynamic sidebar for instant access to content.
+  </Card>
+</Columns>
+
+## Quick Start
+
+Set up your first documentation space in minutes.
+
+<Steps>
+  <Step title="Create Space" icon="plus">
+    Log in and select "New Documentation Space". Enter your project name and brand color `#3B82F6`.
+  </Step>
+  <Step title="Add Pages" icon="file-plus">
+    Click "New Page" and start writing in markdown. Use frontmatter for metadata.
+  </Step>
+  <Step title="Publish" icon="globe">
+    Preview changes, then publish to make your docs live for your team.
+  </Step>
+</Steps>
+
+## Benefits for Teams
+
+Tailor Orange Documentation to your team's needs across roles.
+
+<Tabs>
+  <Tab title="Developers" icon="code">
+    Embed code snippets and API examples directly in docs. Maintain consistency with SDK integrations.
+  </Tab>
+  <Tab title="Product Managers" icon="layout" href="/docs/templates">
+    Use templates for changelogs and guides. Share live previews without code exports.
+  </Tab>
+  <Tab title="Designers" icon="palette">
+    Customize themes with your brand color. Preview responsive layouts in real-time.
+  </Tab>
+</Tabs>
+
+## Brand Integration
+
+Integrate your `#3B82F6` brand color seamlessly.
+
+Customize CSS variables in your space settings or via configuration files.
+
+<CodeGroup tabs="CSS,JSON">
+  ```css
+:root {
+  --brand-primary: #3B82F6;
+  --brand-secondary: #1D4ED8;
+}
+
+.header {
+  background-color: var(--brand-primary);
+}
+  ```
+  ```json
+{
+  "theme": {
+    "primaryColor": "#3B82F6",
+    "logo": "/assets/orange-logo.svg"
+  }
+}
+  ```
+</CodeGroup>
+
+<Expandable title="Advanced Theming" default-open="false">
+For deeper customization, override MDX components with your React setup.
+
+```tsx
+// theme.tsx
+import { ThemeProvider } from '@orange/docs';
+
+const customTheme = {
+  colors: { primary: '#3B82F6' }
+};
+
+<ThemeProvider theme={customTheme}>
+  {/* Your docs */}
+</ThemeProvider>
+```
+</Expandable>
+
+## Why Choose Orange Documentation
+
+You gain efficiency with features like real-time collaboration, SEO-optimized publishing, and analytics on doc usage. Teams report 40% faster onboarding thanks to intuitive search and structured content. Start today and transform how you document projects.

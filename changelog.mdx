@@ -1,0 +1,162 @@
+---
+title: Changelog
+description: Review the version history of Orange Documentation, including new features and bug fixes.
+---
+
+## Latest Updates
+
+Stay current with Orange Documentation releases. You receive automatic updates when available. Check this changelog for details on new features, improvements, and fixes.
+
+<Update label="2024-10-15" description="v1.2.0" tags={["feature", "improvement"]}>
+
+## New Features
+
+- Added support for custom brand colors like `#3B82F6`.
+- Introduced `<Columns>` component for responsive layouts.
+
+## Improvements
+
+- Enhanced MDX parsing speed by `>30%`.
+- Better error handling for invalid JSX attributes.
+
+## Bug Fixes
+
+- Fixed nested code block rendering issues.
+- Resolved special character escaping in prose.
+
+</Update>
+
+<Update label="2024-09-20" description="v1.1.0" tags={["feature", "bugfix"]}>
+
+## New Features
+
+- New `<Steps>` component for tutorial workflows.
+- Integrated Lucide icons with auto-completion.
+
+## Bug Fixes
+
+- Corrected frontmatter YAML parsing errors.
+- Fixed `<Callout>` kind attribute validation.
+
+</Update>
+
+<Update label="2024-08-10" description="v1.0.0" tags={["feature", "breaking"]}>
+
+## New Features
+
+- Core MDX documentation engine launched.
+- Full support for `<Card>`, `<Tabs>`, and `<CodeGroup>` components.
+
+## Breaking Changes
+
+- Updated attribute syntax to require double quotes only.
+
+</Update>
+
+## Version Milestones
+
+<Columns cols={3}>
+
+<Card title="v1.2.0" icon="zap" href="#">
+
+Fastest release yet. Focus on performance and layout components.
+
+</Card>
+
+<Card title="v1.1.0" icon="settings" href="#">
+
+Workflow improvements for better authoring.
+
+</Card>
+
+<Card title="v1.0.0" icon="rocket" href="#">
+
+Initial stable release with essential components.
+
+</Card>
+
+</Columns>
+
+## Upgrade Guide
+
+Follow these steps to upgrade Orange Documentation.
+
+<Steps>
+
+<Step title="Backup" icon="database">
+
+Export your current documentation site.
+
+```bash
+npx orange-docs export ./backup
+```
+
+</Step>
+
+<Step title="Update Package" icon="download">
+
+Install the latest version.
+
+<CodeGroup tabs="npm,yarn">
+
+```bash
+npm install orange-docs@latest
+```
+
+```bash
+yarn add orange-docs@latest
+```
+
+</CodeGroup>
+
+</Step>
+
+<Step title="Rebuild" icon="play">
+
+Rebuild and deploy your site.
+
+```bash
+npx orange-docs build
+npx orange-docs deploy
+```
+
+</Step>
+
+</Steps>
+
+## Known Issues
+
+<Callout kind="alert">
+
+- Mermaid diagrams may fail with complex syntax containing `{` or `}`. Use simple nodes like `A[Start] --> B[End]`.
+- Custom icons outside Lucide library show as placeholders.
+
+Report issues on GitHub.
+
+</Callout>
+
+## Upcoming Changes
+
+<ExpandableGroup>
+
+<Expandable title="v1.3.0 Preview" default-open="false">
+
+You can expect:
+
+- Native `<Video>` component support.
+- AI-assisted MDX validation.
+
+| Feature | Status | ETA |
+|---------|--------|-----|
+| Video embeds | In progress | Q4 2024 |
+| Search improvements | Planned | Q1 2025 |
+
+</Expandable>
+
+<Expandable title="Deprecations">
+
+- Single quotes in JSX attributes deprecated. Migrate to double quotes.
+
+</Expandable>
+
+</ExpandableGroup>

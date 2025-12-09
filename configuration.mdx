@@ -1,0 +1,127 @@
+---
+title: Configuration and Customization
+description: Tailor your documentation space with custom settings, themes, and integrations to fit your needs.
+---
+
+## Theme and Branding
+
+Customize the appearance of your Orange Documentation space to match your brand. Set colors, logos, and fonts through the configuration panel or directly in your `orange.config.json` file.
+
+<Columns cols={2}>
+  <Card title="Quick Theme Setup" icon="palette" href="/docs/theme-quickstart">
+    Apply preset themes in under 2 minutes.
+  </Card>
+  <Card title="Advanced Branding" icon="brush" href="/docs/branding-advanced">
+    Upload custom logos and CSS.
+  </Card>
+</Columns>
+
+<Steps>
+  <Step title="Access Settings" icon="settings">
+    Navigate to **Space Settings** > **Appearance**.
+  </Step>
+  <Step title="Set Brand Color" icon="droplet">
+    Enter your hex code, such as `#3B82F6` for Orange's blue.
+  </Step>
+  <Step title="Preview and Save" icon="eye">
+    Preview changes live, then click **Apply**.
+
+    <Callout kind="tip">
+      Save a backup of your current theme before applying changes.
+    </Callout>
+  </Step>
+</Steps>
+
+For file-based configuration, edit your config file:
+
+<CodeGroup tabs="JSON,YAML">
+  ```json
+  {
+    "theme": {
+      "primaryColor": "#3B82F6",
+      "logo": "https://your-site.com/logo.svg",
+      "font": "Inter"
+    }
+  }
+  ```
+  ```yaml
+  theme:
+    primaryColor: "#3B82F6"
+    logo: "https://your-site.com/logo.svg"
+    font: Inter
+  ```
+</CodeGroup>
+
+## User Permissions
+
+Control access to your documentation with role-based permissions. Assign roles to users or teams to manage who can view, edit, or administer content.
+
+| Role          | View | Edit | Admin | Description                          |
+|---------------|------|------|-------|--------------------------------------|
+| Viewer        | ✅   | ❌   | ❌    | Read-only access to all pages.       |
+| Editor        | ✅   | ✅   | ❌    | Edit and create pages.               |
+| Administrator | ✅   | ✅   | ✅    | Full control, including user management. |
+
+<Callout kind="alert">
+  Review permissions regularly to maintain security. Use the fewest privileges necessary.
+</Callout>
+
+## Export and Import
+
+Export your documentation as Markdown, PDF, or HTML. Import from GitHub repos or ZIP archives to migrate content seamlessly.
+
+<Tabs>
+  <Tab title="Export" icon="download">
+    1. Go to **Space Settings** > **Export**.
+    2. Select format and click **Download**.
+
+    ```bash
+    # Example CLI export
+    orange export --space my-space --format md --output ./docs/
+    ```
+  </Tab>
+  <Tab title="Import" icon="upload">
+    1. Select **Import** in settings.
+    2. Upload file or enter GitHub URL.
+
+    <Expandable title="Advanced Import Options" default-open="false">
+      Support for GitHub, GitLab, and ZIP files. Preserve history and images.
+    </Expandable>
+  </Tab>
+</Tabs>
+
+## Integration Options
+
+Connect Orange Documentation with your tools for enhanced workflows.
+
+<Columns cols={3}>
+  <Card title="GitHub Sync" icon="github" href="https://github.com">
+    Auto-sync changes with your repo.
+  </Card>
+  <Card title="Slack Notifications" icon="message-circle" href="#">
+    Get alerts on page updates.
+  </Card>
+  <Card title="Zapier" icon="zap" href="https://zapier.com">
+    Build custom automations.
+  </Card>
+</Columns>
+
+Configure integrations via the UI or API:
+
+```javascript
+// Example: Set up GitHub webhook
+const config = {
+  integrations: {
+    github: {
+      repo: "your-org/docs",
+      webhookSecret: "your-secret"
+    }
+  }
+};
+```
+
+<ExpandableGroup>
+  <Expandable title="API Keys for Integrations">
+    Generate keys in **Settings** > **Integrations**. Use `{API_KEY}` in your scripts.
+  </Expandable>
+</ExpandableGroup>
